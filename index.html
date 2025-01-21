@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MM Coffee - Soluções em Vending Machines para empresas, escolas e hospitais. Máquinas automáticas de café, snacks e bebidas em São Paulo.">
+    <meta name="keywords" content="vending machine, máquina de café, máquina de snacks, café para empresas, OAB, hospitais, escolas">
+    <meta name="robots" content="index, follow">
+    <title>MM Coffee - Vending Machines e Soluções em Alimentação Automática</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .header-contact {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .about-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .benefits-list li {
+            padding: 1rem;
+            background: #f8f8f8;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .machines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .machine-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .machine-item img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .machine-item ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .machine-item ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .client-type {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .client-type:hover {
+            transform: translateY(-5px);
+        }
+
+        .client-type i {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .client-type h3 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .client-type p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg,#fff, #e8caca);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(217deg, rgba(255,107,107,.05), rgba(255,107,107,0) 70.71%),
+                linear-gradient(127deg, rgba(255,142,142,.05), rgba(255,142,142,0) 70.71%),
+                linear-gradient(336deg, rgba(255,107,107,.05), rgba(255,107,107,0) 70.71%),
+                url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff6b6b' fill-opacity='0.03'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+            animation: backgroundMove 30s linear infinite;
+        }
+
+        @keyframes backgroundMove {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            width: 40px;
+            display: inline-block;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .header-text {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo-container {
+                width: 35px;
+            }
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ebca0f;
+            text-shadow: 0 0 3px #ffc107;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #333;
+            margin: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #ff6b6b;
+            margin: 0.5rem auto;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item .price {
+            color: #ff6b6b;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+        }
+
+        .bebidas-quentes {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .bebidas-price {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .bebidas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .bebida-item {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 8px;
+            background-color: #f8f8f8;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Estilos para o menu de navegação */
+        .nav-menu {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid #ff6b6b;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            text-align: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #ff6b6b;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav-link span {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover span {
+            transform: translateY(-3px);
+        }
+
+        .nav-link:hover i {
+            animation: bounce 0.5s ease infinite;
+        }
+
+        .nav-link i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ff6b6b;
+        }
+
+        /* Animações para elementos da página */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .machine-item, .menu-item, .client-type {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .machine-item:hover, .menu-item:hover, .client-type:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px rgba(255,107,107,0.5); }
+            50% { text-shadow: 0 0 20px rgba(255,107,107,0.8); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Estilo para modal de detalhes */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        /* Estilos para o footer */
+        .footer {
+            background: linear-gradient(135deg, #ff8e8e, #ff6b6b);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-.895-3-2-3-3 .895-3 2 .895 3 2 3zm63 31c1.657 0 3-1.343 3-3s-.895-3-2-3-3 .895-3 2 .895 3 2 3zM34 90c1.657 0 3-1.343 3-3s-.895-3-2-3-3 .895-3 2 .895 3 2 3zm56-76c1.657 0 3-1.343 3-3s-.895-3-2-3-3 .895-3 2 .895 3 2 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: white;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .footer-section:hover h3::after {
+            transform: scaleX(1);
+        }
+
+        .footer-section p {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-section i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: #ff6b6b;
+            transform: translateY(-5px) rotate(360deg);
+        }
+
+        /* Melhorias nos cards e seções */
+        .section-title {
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .machine-item, .menu-item, .client-type {
+            border: 1px solid rgba(255,107,107,0.1);
+            overflow: hidden;
+        }
+
+        .machine-item::before, .menu-item::before, .client-type::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .machine-item:hover::before, .menu-item:hover::before, .client-type:hover::before {
+            left: 100%;
+        }
+
+        .benefits-list li {
+            position: relative;
+            padding-left: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0.5rem;
+            color: #ff6b6b;
+            font-weight: bold;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        .benefits-list li:hover {
+            transform: translateX(10px);
+            background: linear-gradient(135deg, #ff6b6b10, transparent);
+        }
+
+        .benefits-list li:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Melhorias no header */
+        .header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #ff8e8e, #ff6b6b);
+            background-size: 200% 100%;
+            animation: gradient 3s linear infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header h1 {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Estilo da logo */
+        .logo-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            z-index: 1000;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background: none;
+            padding: 0;
+        }
+
+        .logo-container:hover {
+            opacity: 1;
+        }
+
+        .logo-container:hover img {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(255,107,107,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .logo-container {
+                position: static;
+                width: 60px;
+                margin: 1rem;
+            }
+            
+            .header {
+                padding-left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-menu">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#sobre" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Sobre</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#maquinas" class="nav-link">
+                    <i class="fas fa-coffee"></i>
+                    <span>Máquinas</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#produtos" class="nav-link">
+                    <i class="fas fa-cookie-bite"></i>
+                    <span>Produtos</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#clientes" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    <span>Clientes</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="MM Coffee Logo" class="logo">
+            </div>
+            <div class="header-text">
+                <h1>MM Coffee</h1>
+                <p>Soluções completas em Vending Machines para sua empresa</p>
+                <div class="header-contact">
+                    <p>Atendemos São Paulo e região</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="about-section" id="sobre">
+            <h2 class="section-title">Sobre Nós</h2>
+            <div class="about-content">
+                <p>Somos especialistas em fornecer soluções de vending machines para empresas, escolas, hospitais e instituições. Com anos de experiência no mercado, oferecemos:</p>
+                <ul class="benefits-list">
+                    <li>✓ Máquinas modernas e de alta qualidade</li>
+                    <li>✓ Manutenção preventiva regular</li>
+                    <li>✓ Abastecimento frequente</li>
+                    <li>✓ Produtos selecionados e de qualidade</li>
+                    <li>✓ Atendimento personalizado</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="machines-section" id="maquinas">
+            <h2 class="section-title">Nossas Máquinas</h2>
+            <div class="machines-grid">
+                <div class="machine-item">
+                    <img src="https://th.bing.com/th/id/OIP.u-P5tVip-Hcabvz-rcVHRQHaHa?rs=1&pid=ImgDetMain" alt="Máquina de Café Automática">
+                    <h3>Máquina de Café</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Café expresso ☕️</li>
+                        <li><i class="fas fa-check-circle"></i> Cappuccino ☕️</li>
+                        <li><i class="fas fa-check-circle"></i> Chocolate quente ☕️</li>
+                        <li><i class="fas fa-check-circle"></i> Até 8 opções de bebidas ☕️</li>
+                    </ul>
+                </div>
+                <div class="machine-item">
+                    <img src="https://th.bing.com/th/id/OIP.vo3wuccle5UmedJER_9vbAHaHa?rs=1&pid=ImgDetMain" alt="Máquina de Snacks">
+                    <h3>Máquina de Snacks</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Salgadinhos 🍟</li>
+                        <li><i class="fas fa-check-circle"></i> Chocolates 🍫</li>
+                        <li><i class="fas fa-check-circle"></i> Bebidas geladas 🍺 </li>
+                        <li><i class="fas fa-check-circle"></i> Produtos variados 🎁 </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <h2 class="section-title" id="produtos">Lanches</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="https://th.bing.com/th/id/OIP.Xh5huMbeEeRg3zsdWljA4wHaE8?w=272&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Presunto, queijo e Cheddar">
+                <h3>Presunto, queijo e Cheddar</h3>
+                <p class="price">R$ 2,00</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://th.bing.com/th/id/OIP.SKqw5VIWV5j3MmEO8LcO_gHaEs?rs=1&pid=ImgDetMain" alt="Peito de Peru com Queijo">
+                <h3>Peito de Peru com Queijo</h3>
+                <p class="price">R$ 2,00</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://assets.unileversolutions.com/recipes-v2/36299.jpg" alt="Três Queijos">
+                <h3>Três Queijos</h3>
+                <p class="price">R$ 2,50</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://www.debemcomacomida.com.br/wp-content/uploads/2021/05/grilled-salami-and-cheese-sandwich-3UVLX2J-1024x683.jpg" alt="Salame com Queijo">
+                <h3>Salame com Queijo</h3>
+                <p class="price">R$ 2,50</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="bebidas">Bebidas Quentes</h2>
+        <div class="bebidas-quentes">
+            <p class="bebidas-price">Todas as bebidas R$ 1,00</p>
+            <div class="bebidas-grid">
+                <div class="bebida-item">
+                    <i class="fas fa-coffee fa-2x"></i>
+                    <h3>Café Curto</h3>
+                </div>
+                <div class="bebida-item">
+                    <i class="fas fa-mug-hot fa-2x"></i>
+                    <h3>Café Longo</h3>
+                </div>
+                <div class="bebida-item">
+                    <i class="fas fa-coffee fa-2x"></i>
+                    <h3>Cappuccino</h3>
+                </div>
+                <div class="bebida-item">
+                    <i class="fas fa-mug-hot fa-2x"></i>
+                    <h3>Chocolate</h3>
+                </div>
+            </div>
+        </div>
+        <section class="clients-section" id="clientes">
+            <h2 class="section-title">Onde Atuamos</h2>
+            <div class="clients-grid">
+                <div class="client-type">
+                    <i class="fas fa-building"></i>
+                    <h3>Empresas</h3>
+                    <p>Soluções para escritórios e ambientes corporativos</p>
+                </div>
+                <div class="client-type">
+                    <i class="fas fa-hospital"></i>
+                    <h3>Hospitais</h3>
+                    <p>Atendimento 24h para profissionais e visitantes</p>
+                </div>
+                <div class="client-type">
+                    <i class="fas fa-school"></i>
+                    <h3>Escolas</h3>
+                    <p>Lanches saudáveis para alunos e funcionários</p>
+                </div>
+                <div class="client-type">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>OAB</h3>
+                    <p>Serviço especializado para área jurídica</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <a href="https://wa.me/SEU_NUMERO_AQUI" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp fa-lg"></i>
+        Faça seu orçamento
+    </a>
+
+    <div id="machineModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Endereço</h3>
+                <p><i class="fas fa-map-marker-alt"></i>Rua Antônio Sebastião Sobrinho</p>
+                <p>Parque Panamericano - São Paulo, SP</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="fas fa-phone"></i>+55 15 98591-4654</p>
+                <p><i class="fas fa-envelope"></i>contato@mmcoffee.com.br</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horário de Atendimento</h3>
+                <p><i class="far fa-clock"></i>Segunda a Sexta: 8h às 18h</p>
+                <p>Sábado: 8h às 12h</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2025 MM Coffee - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animação de fade-in nos elementos
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.about-section, .machine-item, .menu-item, .client-type').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+
+        // Modal para detalhes das máquinas
+        const modal = document.getElementById('machineModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+        const closeModal = document.querySelector('.close-modal');
+
+        document.querySelectorAll('.machine-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.querySelector('h3').textContent;
+                const details = item.querySelector('ul').innerHTML;
+                modalTitle.textContent = title;
+                modalContent.innerHTML = `
+                    <img src="${item.querySelector('img').src}" alt="${title}" style="width: 100%; margin-bottom: 1rem;">
+                    <ul>${details}</ul>
+                    <button class="whatsapp-button pulse" style="position: static; width: 100%; justify-content: center; margin-top: 1rem;">
+                        <i class="fab fa-whatsapp"></i>
+                        Solicitar Orçamento
+                    </button>
+                `;
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Smooth scroll para links do menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
